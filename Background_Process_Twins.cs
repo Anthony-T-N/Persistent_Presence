@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace Background_Process_Twins
+namespace Persistent_Presence
 {
     class Background_Process_Twin
     {
