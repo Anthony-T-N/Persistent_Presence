@@ -21,7 +21,7 @@ namespace Persistent_Presence
         static void Main(string[] args)
         {
             Persistent_Presence main_program = new Persistent_Presence();
-            main_program.duplicate_executables();
+            main_program.check_executable_location();
             /*
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE); // Hide
