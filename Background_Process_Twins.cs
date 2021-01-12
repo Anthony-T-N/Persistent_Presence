@@ -16,7 +16,7 @@ namespace Persistent_Presence
             Debug.WriteLine("=================================================================================");
             for (int i = 0; i <= allProcesses.Length - 1; i++)
             {
-                if (allProcesses[i].ToString().Contains("Background_Process_Twin"))
+                if (allProcesses[i].ToString().Contains("Persistent_Presence"))
                 {
                     Debug.WriteLine(allProcesses[i].ToString().Substring(27));
                     Debug.WriteLine("[*] Twin Process Is Alive");
@@ -41,7 +41,7 @@ namespace Persistent_Presence
         public void execute_twin_process()
         {
             Process process = new Process();
-            string exe_location = Directory.GetCurrentDirectory() + @"\Background_Process_Twin.exe";
+            string exe_location = Directory.GetCurrentDirectory() + @"\Persistent_Presence.exe";
             Debug.WriteLine(exe_location);
             process.StartInfo.FileName = exe_location;
             process.StartInfo.UseShellExecute = true;
